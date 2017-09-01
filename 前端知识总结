@@ -197,7 +197,7 @@ html
     cellpadding单元格内容与单元格边框的显示距离，单位像素
   	
 
-三、	选择器（找对象，定义样式表）
+三、选择器（找对象，定义样式表）
   1、标签选择器(标记选择器)
     <标签名></标签名>   结构中
     标签名{[样式]}    样式中
@@ -363,241 +363,276 @@ css样式——cascading style sheet层叠样式表 选择器{属性:值}
   11、text-align文本（图片）水平对齐方式
     text-align:left;左对齐
     text-align:center;居中对齐
-text-align:right;右对齐
-text-align:justify;实现两端对齐的文本效果+
-text-justify:inter-word;增加或减少单词间的间隔
-12、line-height行高（一行文字所占的高度）
-   一行文字在特定容器中垂直居中，文字行高等于容器的高度
-文字设置行高后，会在行高范围内垂直居中(撑不起盒高)
-13、font-family字体
-1）多个字体中间使用逗号分隔，后面字体属于备用字体
-2）字体名称中间有空格，需要在字体名称上加引号
-3）中英文混排的段落文字，英文字体要放在前面（font-family:Arial “微软雅黑 ”）
-4）默认：Arial、宋体、黑体、微软雅黑
-14、font-size字体尺寸(字号,浏览器默认字号16px,网页正文默认12px、14px)
-单位：px像素（建议使用偶数）
-15、text-transform字体转换（英文文字大小写）
-text-transform:uppercase;全部大写
-text-transform;lowercase;全部小写
-text-transform:capitalize;首字母大写
-16、color字体颜色
-color:#fff;
-     color:red;
-17、font-weight字体加粗
-font-weight:bold;加粗(相当于700)
-font-weight:normal;正常(相当于400)
-font-weight:900;文字加粗到900
-18、font-style字体形状
-font-style:normal;正常
-font-style:italic;倾斜（简单的字体风格对每个字母结构有小改动）
-font-style:oblique;文本倾斜显示（正常竖直文本的倾斜版本）
-19、text-decoration文本装饰
-text-decoration:none;取消下划线
-text-decoration:underline;显示下划线
-text-decoration:line-through;删除线
-text-decoration:overline;显示上划线
-20、text-indent首行缩进n个px
-	 text-indent:npx;
-21、font-variant设定小型大写字母
-	font-variant:small-caps;采用不同大小的大写字母
-22、word-spacing字间隔(改变汉字/单词间的标准间隔)
-	word-spacing:npx/nem(normal/0);
-23、letter-spacing字母/字符间的间隔
-	letter-spacing:npx/nem;
-24、white-space:normal;丢掉多余的空白符（排版方式设置值）
-	white-space:pre;内容原样显示
-	white-space:norwap;不换行显示（强制不换行）
-25、word-wrap:break-word;针对网址强制换行
-26、font:斜体 加粗 字号/行高 字体;
-	font:italic bold 14px/24px Arial;
-27、	list-style列表符
-list-style;none;清除ul自带的列表符
-28、	display显示为
-display:block;转换为块级元素（显示 ）
-display:inline;转换为行级元素(在一行显示，支持宽高，换行有空格)
-display:inline-block;对外显示为行级元素，本身可以设置宽、高、留白，保留块级元素的特征
-display:none;隐藏
-display:table; 此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。
-display:inherit; 规定应该从父元素继承 display 属性的值。
-29、	position定位技术（网页中出现覆盖关系，优先考虑使用定位技术）
-a)	position:relative;相对定位（还可以用于微调）
-相对定位盒仍然占位；
-相对于原来的位置可以发生偏移，偏移距离可以通过left/right，top/bottom来进行设置
-b)	position:absoluet;绝对定位
-绝对定位盒不再占位；
-当盒设置为绝对定位后，其宽度变为自适应
-默认绝对定位盒是相对于浏览器窗口的四个角为坐标原点进行定位，可以通过left/right，top/bottom四个属性进行精确定位，盒内为正，盒外为负；
-绝对定位盒相对于最近的设置为相对定位的祖先盒（父辈盒）为参照进行定位，可以通过left/right,top/bottom四个属性中的两个之进行精确定位；
-绝对定位的步骤：
-1）为要做特殊定位的盒子用：position:absolute;
-2）为定位盒子的父级盒（有固定宽width高height）应用：position:relative;
-3）回到定位盒子上，通过top,bottom,left,right中的2个（横向一个，纵向一个）进行位置的定位
-c)	position:fixed;固定定位
-固定定位不占位；
-宽度会变为自适应；
-相对于浏览器的四个角为原点进行定位；不随页面内容而滚动
-后加载的定位元素默认会覆盖先加载的定位元素，可以通过z-index属性来设置定位盒的叠放次序，z-index值越大，叠放层次越高
-30、	z-index定位元素的叠放次序
-1）z-index只对定位元素（position）生效
-2）z-index越大，叠放次序越高
-3）z-index没有单位（正值向上调级，负值向下调级）
-31、	vertical-align行级元素垂直对齐方式
-vertical-align:top;顶端对齐
-vertical-align:middle;居中对齐
-vertical-align:bottom;底端对齐
-32、	box-shadow盒阴影
-box-shadow:x轴偏移量 y轴偏移量 阴影羽化值 [阴影的大小] 颜色色值
-box-shadow:10px 5px 15px [10px] #fff;
-box-shadow:10px 5px 15px [10px] #fff inset;盒内阴影
-33、	text-shadow文字阴影
-box-shadow:x轴偏移量 y轴偏移量 颜色色值
-34、	transform变形动画
-1）transform:rotate(45deg);旋转45deg(正值顺时针旋转，负值逆时针旋转)
-2）transform:scale(0.8,2);缩放，x轴缩小，y轴扩大2倍（0-1为缩小，1以上为放大，若x轴和y轴的缩放比例一致可以直接用一个值代替）
-   transform:scaleX();沿x轴缩放
-   transform:scaleY();沿y轴缩放
-3）transform:skew(45deg,0);倾斜,沿x轴倾斜45deg
-4）transform:translate(x,y);位移，水平方向向右为正，垂直方向向下为正
-   transform:translateX();transform:translateY();
-35、	transition状态过渡动画
-transition:css样式 时间1 类型时间2
-css样式：产生过渡动画的样式范围 all-所有样式 width只有宽度有过渡效果
-时间1：动画的执行时间（linear匀速，ease平滑，ease-in加速，ease-out减速，ease-in-out先加速后减速）
-时间2：动画延迟时间
-36、	关键帧动画
-1）定义动画
-@keyframes 动画名称（英文）{
-    0%{}
-    50%{}
-    100%{}
-}
-2）引用动画
-animation:动画名称 动画执行时间 动画类型 延迟时间 循环
-循环：n-循环n次，infinite动画无限循环
-animation-delay延迟时间
-37、	opacity元素的不透明度
-opacity:0.5;(取值范围0-1)
-38、	cursor鼠标指针
-cursor:text;显示为I形|
-cursor:pointer;显示为手形
-cursor:move;显示为可移动
-cursor:wait;显示为程序正在忙（通常是一只表或沙漏）
-cursor:help;显示为帮助（通常是一个问号或气球）
-cursor:url(images/mouese.png),default;显示为图片
+    text-align:right;右对齐
+    text-align:justify;实现两端对齐的文本效果+
+    text-justify:inter-word;增加或减少单词间的间隔
+  12、line-height行高（一行文字所占的高度）
+    一行文字在特定容器中垂直居中，文字行高等于容器的高度
+    文字设置行高后，会在行高范围内垂直居中(撑不起盒高)
+  13、font-family字体
+    1）多个字体中间使用逗号分隔，后面字体属于备用字体
+    2）字体名称中间有空格，需要在字体名称上加引号
+    3）中英文混排的段落文字，英文字体要放在前面（font-family:Arial “微软雅黑 ”）
+    4）默认：Arial、宋体、黑体、微软雅黑
+  14、font-size字体尺寸(字号,浏览器默认字号16px,网页正文默认12px、14px)
+    单位：px像素（建议使用偶数）
+  15、text-transform字体转换（英文文字大小写）
+    text-transform:uppercase;全部大写
+    text-transform;lowercase;全部小写
+    text-transform:capitalize;首字母大写
+  16、color字体颜色
+    color:#fff;
+    color:red;
+  17、font-weight字体加粗
+    font-weight:bold;加粗(相当于700)
+    font-weight:normal;正常(相当于400)
+    font-weight:900;文字加粗到900
+  18、font-style字体形状
+    font-style:normal;正常
+    font-style:italic;倾斜（简单的字体风格对每个字母结构有小改动）
+    font-style:oblique;文本倾斜显示（正常竖直文本的倾斜版本）
+  19、text-decoration文本装饰
+    text-decoration:none;取消下划线
+    text-decoration:underline;显示下划线
+    text-decoration:line-through;删除线
+    text-decoration:overline;显示上划线
+  20、text-indent首行缩进n个px
+    text-indent:npx;
+  21、font-variant设定小型大写字母
+    font-variant:small-caps;采用不同大小的大写字母
+  22、word-spacing字间隔(改变汉字/单词间的标准间隔)
+    word-spacing:npx/nem(normal/0);
+  23、letter-spacing字母/字符间的间隔
+    letter-spacing:npx/nem;
+  24、white-space:normal;丢掉多余的空白符（排版方式设置值）
+    white-space:pre;内容原样显示
+    white-space:norwap;不换行显示（强制不换行）
+  25、word-wrap:break-word;针对网址强制换行
+  26、font:斜体 加粗 字号/行高 字体;
+    font:italic bold 14px/24px Arial;
+  27、list-style列表符
+    list-style:none;清除ul自带的列表符
+  28、display显示为
+    display:block;转换为块级元素（显示 ）
+    display:inline;转换为行级元素(在一行显示，支持宽高，换行有空格)
+    display:inline-block;对外显示为行级元素，本身可以设置宽、高、留白，保留块级元素的特征
+    display:none;隐藏
+    display:table; 此元素会作为块级表格来显示（类似 <table>），表格前后带有换行符。
+    display:inherit; 规定应该从父元素继承 display 属性的值。
+  29、position定位技术（网页中出现覆盖关系，优先考虑使用定位技术）
+    a) position:relative;相对定位（还可以用于微调）
+      相对定位盒仍然占位；
+      相对于原来的位置可以发生偏移，偏移距离可以通过left/right，top/bottom来进行设置
+    b) position:absoluet;绝对定位
+      绝对定位盒不再占位；
+      当盒设置为绝对定位后，其宽度变为自适应
+      默认绝对定位盒是相对于浏览器窗口的四个角为坐标原点进行定位，可以通过left/right，top/bottom四个属性进行精确定位，盒内为正，盒外为负；
+      绝对定位盒相对于最近的设置为相对定位的祖先盒（父辈盒）为参照进行定位，可以通过left/right,top/bottom四个属性中的两个之进行精确定位；
+      绝对定位的步骤：
+        1）为要做特殊定位的盒子用：position:absolute;
+        2）为定位盒子的父级盒（有固定宽width高height）应用：position:relative;
+        3）回到定位盒子上，通过top,bottom,left,right中的2个（横向一个，纵向一个）进行位置的定位
+    c) position:fixed;固定定位
+      固定定位不占位；
+      宽度会变为自适应；
+      相对于浏览器的四个角为原点进行定位；不随页面内容而滚动
+      后加载的定位元素默认会覆盖先加载的定位元素，可以通过z-index属性来设置定位盒的叠放次序，z-index值越大，叠放层次越高
+  30、z-index定位元素的叠放次序
+    1）z-index只对定位元素（position）生效
+    2）z-index越大，叠放次序越高
+    3）z-index没有单位（正值向上调级，负值向下调级）
+  31、vertical-align行级元素垂直对齐方式
+    vertical-align:top;顶端对齐
+    vertical-align:middle;居中对齐
+    vertical-align:bottom;底端对齐
+  32、box-shadow盒阴影
+    box-shadow:x轴偏移量 y轴偏移量 阴影羽化值 [阴影的大小] 颜色色值
+    box-shadow:10px 5px 15px [10px] #fff;
+    box-shadow:10px 5px 15px [10px] #fff inset;盒内阴影
+  33、text-shadow文字阴影
+    box-shadow:x轴偏移量 y轴偏移量 颜色色值
+  34、transform变形动画
+    1）transform:rotate(45deg);旋转45deg(正值顺时针旋转，负值逆时针旋转)
+    2）transform:scale(0.8,2);缩放，x轴缩小，y轴扩大2倍（0-1为缩小，1以上为放大，若x轴和y轴的缩放比例一致可以直接用一个值代替）
+       transform:scaleX();沿x轴缩放
+       transform:scaleY();沿y轴缩放
+    3）transform:skew(45deg,0);倾斜,沿x轴倾斜45deg
+    4）transform:translate(x,y);位移，水平方向向右为正，垂直方向向下为正
+       transform:translateX();transform:translateY();
+  35、transition状态过渡动画
+    transition:css样式 时间1 类型时间2
+    css样式：产生过渡动画的样式范围 all-所有样式 width只有宽度有过渡效果
+    时间1：动画的执行时间（linear匀速，ease平滑，ease-in加速，ease-out减速，ease-in-out先加速后减速）
+    时间2：动画延迟时间
+  36、关键帧动画
+    1）定义动画
+      @keyframes 动画名称（英文）{
+        0%{}
+        50%{}
+        100%{}
+      }
+    2）引用动画
+       animation:动画名称 动画执行时间 动画类型 延迟时间 循环
+         循环：n-循环n次，infinite动画无限循环
+         animation-delay延迟时间
+  37、opacity元素的不透明度
+      opacity:0.5;(取值范围0-1)
+  38、cursor鼠标指针
+      cursor:text;显示为I形|
+      cursor:pointer;显示为手形
+      cursor:move;显示为可移动
+      cursor:wait;显示为程序正在忙（通常是一只表或沙漏）
+      cursor:help;显示为帮助（通常是一个问号或气球）
+      cursor:url(images/mouese.png),default;显示为图片
 	-ms-cursor:url(images/mouese.png),default;
-注释：请在此列表的末端始终定义一种普通的光标，以防没有由 URL 定义的可用光标。	default默认光标（通常是一个箭头）
+      注释：请在此列表的末端始终定义一种普通的光标，以防没有由 URL 定义的可用光标。	default默认光标（通常是一个箭头）
 
 
 导航的结构特征：
-ul-导航容器，负责导航整体结构布局
-li-导航项，一般负责水平布局，需要使用浮动，另外也会设置宽度或间距（填充）
-a-导航文字，一般所有文字样式都加到a上，有时也会设置宽度或间距（填充），当链接的区域范围需要扩大时，可以把a转为块级元素（display:block;），给行高和宽度
-<ul>
-    <li><a href=”#”>首页</a></li>
-</ul>
-1)	等宽度[宽度一致]（子导航的宽度是相等的）
-  li{float:left;width:100px;}
-  a{font-size:12px;color:red;display:block;line-height:24px;}
-2)	等间距[留白一致]（子导航的宽度不一，每个导航之间的距离是相等）
-  li不能定义宽度，给li添加padding或者margin，浮动（float:left;）
+    ul-导航容器，负责导航整体结构布局
+    li-导航项，一般负责水平布局，需要使用浮动，另外也会设置宽度或间距（填充）
+    a-导航文字，一般所有文字样式都加到a上，有时也会设置宽度或间距（填充），当链接的区域范围需要扩大时，可以把a转为块级元素（display:block;），给行高和宽度
+    <ul>
+        <li><a href=”#”>首页</a></li>
+    </ul>
+  1) 等宽度[宽度一致]（子导航的宽度是相等的）
+    li{float:left;width:100px;}
+    a{font-size:12px;color:red;display:block;line-height:24px;}
+  2) 等间距[留白一致]（子导航的宽度不一，每个导航之间的距离是相等）
+    li不能定义宽度，给li添加padding或者margin，浮动（float:left;）
+    
 路径的应用：
-1)	绝对路径：http://www.hxsd.com 站外链接
-2)	相对路径：站内链接
-返回上级目录：../
-3)	锚点技术：
-a)	下锚(定义锚点，跳转的目的地)<a name=”锚点名”></a> <a id=”锚点名”></a> 
-b)	锚点链接<a href=”#锚点名”></a>
-c)	邮件地址链接（跳转到邮箱服务器）
-<a href=”mailto:邮箱地址”></a>调用本地邮件客户端
+  1) 绝对路径：http://www.hxsd.com 站外链接
+  2) 相对路径：站内链接
+      返回上级目录：../
+  3) 锚点技术：
+      a) 下锚(定义锚点，跳转的目的地)<a name=”锚点名”></a> <a id=”锚点名”></a> 
+      b) 锚点链接<a href=”#锚点名”></a>
+      c) 邮件地址链接（跳转到邮箱服务器）
+        <a href=”mailto:邮箱地址”></a>调用本地邮件客户端
+	
 盒子的绝对居中：
-1)	position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;
-2)	position:absolute;left:50%;top:50%;transform:translate(50%,50%);
-css sprite精灵技术 
-1)	制作一张具有多个状态的拼合图片
-2)	给要显示的盒有限的尺寸(宽度和高度)，通过背景图片的方式加载进来
-3)	通过改变背景图的定位（background-position）控制不同状态的显示.
+    1) position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;
+    2) position:absolute;left:50%;top:50%;transform:translate(50%,50%);
+    
+css sprite精灵技术: 
+    1) 制作一张具有多个状态的拼合图片
+    2) 给要显示的盒有限的尺寸(宽度和高度)，通过背景图片的方式加载进来
+    3) 通过改变背景图的定位（background-position）控制不同状态的显示.
 
 
-五、html5标签
-1.	header网页头部区（一种具有引导和导航作用的结构元素可以包含hgroup、nav）
-2.	nav网页导航区(内页导航、传统导航、侧边栏导航、翻页操作)
-3.	article文章(独立内容可以包含header)
-4.	aside侧边栏
-5.	section文档章节（相对比较独立的一组内容可以包含header）
-6.	footer网页底部区
-7.	hgroup标题组（包含多个标题把h1~h6的元素进行分组）
-8.	time时间日期
-<time pubdate=”pubdate” datetime=”2016-03-24”>2016年3月24日</time>
-time元素中包含pubdate属性，表示当前内容的发布时间
-9.	video视频
-<video src=”视频文件路径” controls autoplay></video>
-controls控制面板（视频的播放和暂停）
-autoplay自动播放
-10.	audio声音
-<audio src=”声音文件路径” controls autoplay></audio>
-11.	address 元素用来在页面中显示联系信息，如文档的作者、邮箱、地址、电话信息等
-12.	figure 表示页面上一块独立的内容，如果从页面上删除不影响页面整体效果
-13.	figcaption属于figure元素，必须写在figure元素内部，一个figure元素内最多只允许放置一个figcaption元素
-<figure>
-	<img src="" title="风景">
-   <img src="" title="风景">
-   <figcaption>风景</figcaption>
-</figure>
-14.	details 用于标识元素内部的子元素可以被展开、收缩显示的元素
-15.	summary从属于details元素，用鼠标点击summary元素中的内容文字时，details元素中的其他所有从属元素将会展开或收缩（只在谷歌浏览器显示）
-16.	mark页面中突出显示或高亮显示，目的吸引用户
-<p>路上的飞机上<mark>圣诞节</mark>路上看见</p>
-17.	progress代表一个任务的完成进度
-<progress max="100" value="85"></progress>
-18.	meter 规定范围内的数量值
-<meter value="43.9" max="119" min="0" low="50" high="70" optimum="71"></meter>
-<meter value="43.9" max="119" min="0" low="50" high="70" optimum="49"></meter>
-<meter value="43.9" max="119" min="0" low="50" high="70" optimum="50"></meter>
-19.	canvas绘图
-a)	绘制矩形
-i.	创建画布：指定id、width(画布宽度)、height(画布高度)
-  <canvas id="canvas" width="500" height="350"></canvas>
-  创建一个画布，长度为500，高度为350
-ii.	引入脚本：<script type="text/javascript" src="js/canvas.js" charset="utf-8"></script>
-   引入一个名为canvas.js的js脚本，语言编码为utf-8
-iii.	body的属性中，使用onLoad="draw('canvas')"调用脚本文件中的draw函数进行图形的绘制
-iv.	获取canvas元素
- 用getElementById获取canvas对象
-v.	获取上下文
-在绘制图形时要用图形上下文（一个封转了很多绘图功能的对象），使用canvas对象的getContext()方法获得图形上下文，在draw函数中把参数设置为“2d”
-vi.	填充与绘制过程
-绘制的两种方法：填充（fill将图形内部填满）、绘制边框（stroke不把图形内部填满，只是绘制图形的外框）
-vii.	设置绘制样式
-调用相关方法进行绘制：fillStyle（填充的样式，在本属性中设置填入的填充颜色值）、strokeStyle（图形边框的样式，在本属性中设置填入边框的填充颜色）
-viii.	指定画笔的宽度
-通过上下问对象（context）的lineWidth属性来设置图形边框的宽度
-ix.	设置颜色值
-16进制的颜色值、颜色名、rgb(rgba(0,0,0))、rgba(rgba(0,0,0,0.1))
-x.	绘制矩形
-context.filRect(x,y,width,height)填充方法
-context.strokeRect(x,y,width,height)
-x指矩形的起点坐标，y矩形的终点坐标，坐标原点时canvas画布的左上角，width为矩形的长度，height为矩形的高度
-b)	绘制圆形
-i.	开始创建路径
-使用图形上下文对象的beginPath方法：context.beginPath();
-ii.	创建图形路径
-创建图形路径时，查看使用图形上下对象的arc方法
-context.arc(x,y,radius,starAngle,endAngle,anticlockwise)
-x绘制图形的起点坐标，y终点坐标，radius圆形半径，starAngle开始的角度，endAngle结束的角度，anticlockwise是否按顺时针方向绘制（布尔值true）
-var radius=degrees*Math.PI/180  Math.PI表示的角度时180度，Math.PI*2的角度是360度
-iii.	创建完成关闭路径
+五、 html5标签
+  1. header网页头部区（一种具有引导和导航作用的结构元素可以包含hgroup、nav）
+  2. nav网页导航区(内页导航、传统导航、侧边栏导航、翻页操作)
+  3. article文章(独立内容可以包含header)
+  4. aside侧边栏
+  5. section文档章节（相对比较独立的一组内容可以包含header）
+  6. footer网页底部区
+  7. hgroup标题组（包含多个标题把h1~h6的元素进行分组）
+  8. time时间日期
+    <time pubdate=”pubdate” datetime=”2016-03-24”>2016年3月24日</time>
+      time元素中包含pubdate属性，表示当前内容的发布时间
+  9. video视频
+    <video src=”视频文件路径” controls autoplay></video>
+      controls控制面板（视频的播放和暂停）
+      autoplay自动播放
+  10. audio声音
+    <audio src=”声音文件路径” controls autoplay></audio>
+  11. address 元素用来在页面中显示联系信息，如文档的作者、邮箱、地址、电话信息等
+  12. figure 表示页面上一块独立的内容，如果从页面上删除不影响页面整体效果
+  13. figcaption属于figure元素，必须写在figure元素内部，一个figure元素内最多只允许放置一个figcaption元素
+    <figure>
+       <img src="" title="风景">
+       <img src="" title="风景">
+       <figcaption>风景</figcaption>
+    </figure>
+  14. details 用于标识元素内部的子元素可以被展开、收缩显示的元素
+  15. summary从属于details元素，用鼠标点击summary元素中的内容文字时，details元素中的其他所有从属元素将会展开或收缩（只在谷歌浏览器显示）
+  16. mark页面中突出显示或高亮显示，目的吸引用户
+    <p>路上的飞机上<mark>圣诞节</mark>路上看见</p>
+  17. progress代表一个任务的完成进度
+    <progress max="100" value="85"></progress>
+  18. meter 规定范围内的数量值
+    <meter value="43.9" max="119" min="0" low="50" high="70" optimum="71"></meter>
+    <meter value="43.9" max="119" min="0" low="50" high="70" optimum="49"></meter>
+    <meter value="43.9" max="119" min="0" low="50" high="70" optimum="50"></meter>
+  19. canvas绘图
+    a) 绘制矩形
+      i. 创建画布：指定id、width(画布宽度)、height(画布高度)
+          <canvas id="canvas" width="500" height="350"></canvas>
+          创建一个画布，长度为500，高度为350
+      ii. 引入脚本：<script type="text/javascript" src="js/canvas.js" charset="utf-8"></script>
+          引入一个名为canvas.js的js脚本，语言编码为utf-8
+      iii. body的属性中，使用onLoad="draw('canvas')"调用脚本文件中的draw函数进行图形的绘制
+      iv. 获取canvas元素
+         用getElementById获取canvas对象
+      v. 获取上下文
+         在绘制图形时要用图形上下文（一个封转了很多绘图功能的对象），使用canvas对象的getContext()方法获得图形上下文，在draw函数中把参数设置为“2d”
+      vi. 填充与绘制过程
+         绘制的两种方法：填充（fill将图形内部填满）、绘制边框（stroke不把图形内部填满，只是绘制图形的外框）
+      vii. 设置绘制样式
+         调用相关方法进行绘制：fillStyle（填充的样式，在本属性中设置填入的填充颜色值）、strokeStyle（图形边框的样式，在本属性中设置填入边框的填充颜色）
+     viii. 指定画笔的宽度
+         通过上下问对象（context）的lineWidth属性来设置图形边框的宽度
+     ix. 设置颜色值
+         16进制的颜色值、颜色名、rgb(rgba(0,0,0))、rgba(rgba(0,0,0,0.1))
+     x. 绘制矩形
+         context.filRect(x,y,width,height)填充方法
+         context.strokeRect(x,y,width,height)
+         x指矩形的起点坐标，y矩形的终点坐标，坐标原点时canvas画布的左上角，width为矩形的长度，height为矩形的高度
+    b) 绘制圆形
+      i. 开始创建路径
+         使用图形上下文对象的beginPath方法：context.beginPath();
+      ii. 创建图形路径
+         创建图形路径时，查看使用图形上下对象的arc方法
+         context.arc(x,y,radius,starAngle,endAngle,anticlockwise)
+         x绘制图形的起点坐标，y终点坐标，radius圆形半径，starAngle开始的角度，endAngle结束的角度，anticlockwise是否按顺时针方向绘制（布尔值true）
+         var radius=degrees*Math.PI/180  Math.PI表示的角度时180度，Math.PI*2的角度是360度
+      iii. 创建完成关闭路径
 
-c)	绘制文字
-使用text方法或strokeText方法
-i.	Text方法用填充的方法绘制字符串
-context.fillText(text,x,y,[maxwidth])
-ii.	strokeText方法用轮廓的方法绘制字符串
-context.strokeText(text, x,y,[maxwidth])
-  text表示要检测的文字，x表示要绘制文字的起点横坐标，y表示要绘制的文字起点纵坐标，maxwidth为可选参数，表示显示文字的时候最大的宽度，可以防止文字溢出
-  context.font = “font-weight font-size font-family”;
-  context.textBaseline = ‘alphabetic’;(top顶部对齐，hanging悬挂，middle中间对齐，bottom底部对齐，alphabetic默认值)
- 
-  context.textAlign = ‘start’
-iii.	ADS的
-d)	Sd
-20.	sd
+    c) 绘制文字
+      使用text方法或strokeText方法
+      i. Text方法用填充的方法绘制字符串
+         context.fillText(text,x,y,[maxwidth])
+      ii. strokeText方法用轮廓的方法绘制字符串
+         context.strokeText(text, x,y,[maxwidth])
+         text表示要检测的文字，x表示要绘制文字的起点横坐标，y表示要绘制的文字起点纵坐标，maxwidth为可选参数，表示显示文字的时候最大的宽度，可以防止文字溢出
+         context.font = “font-weight font-size font-family”;
+         context.textBaseline = ‘alphabetic’;(top顶部对齐，hanging悬挂，middle中间对齐，bottom底部对齐，alphabetic默认值)
+         context.textAlign = ‘start’
+	 
+非主流字体的应用（英文字体）
+  1）定义字体
+    @font-face{
+      font-family:”字体英文名称”;（不可以使用已有的主流字体名称）
+      src:url(“字体路径1”),url(“字体路径2”)
+    }
+  2）使用字体
+    font-family:”字体英文名称”;
+    
+网络英文字体应用:
+  1）下载对应的字体
+  2）在www.font2web.com或www.fontconverter.org/网站对字体进行转换
+  3）将fonts文件夹与fonts.css拷贝到网站目录
+  4）在应用字体的网页中导入fonts.css文件
+  5）直接应用已经定义好的字体#box{font-family:”定义字体名称”;}
+  
+图标字体的使用:
+  1）将fonts文件夹拷贝到网站目录
+  2）将font-awersome.min.css文件拷贝到网站的css文件夹中
+  3）在应用字体图标的网页中导入font-awesome.min.css
+  4）在网页中指定图标应用 ‘类名fa-图标名称’，同时需要定义icon{font-family:”图标字体名称”}，并应用到指定图标上
+  5）可以在图标上应用其他类名指定字体大小颜色
+  
+样式属性浏览器兼容前缀:
+  -moz-火狐浏览器
+  -webkit-谷歌浏览器
+  -ms-IE浏览器
+  -o-欧朋浏览器
+
+媒体查询:
+  @media screen and (max-width:980px){[样式]}
+    对屏幕尺寸进行检测，同时根据屏幕尺寸变化来进行样式属性值的变化
+
+
+
