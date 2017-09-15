@@ -222,6 +222,10 @@ html
   6、后代选择器
     先辈选择器A 后辈选择器B{[样式]}
     在选择器A区域内的所有选择器B全部生效
+    
+    选择器的权重（权重有覆盖性）：
+    	
+    
   7、父子选择器
     父选择器>子选择器
     body>div
@@ -267,6 +271,8 @@ css样式——cascading style sheet层叠样式表 选择器{属性:值}
       3、把新建的css文件关联到网页中（<link href=“css的保存的位置（路径）” rel=“stylesheet” type=“text/css”/>）
     3）行内样式   (内链样式)
       <body style=”background=’red’;border=’1px solid red’”></body>
+      
+     优先级：行间样式 > 内部样式 > 外部样式
   2、width    宽度
     width:100px;
     min-width:npx;最小宽度（不超过或小于npx）
