@@ -1,0 +1,196 @@
+ 1.行内元素有哪些？块级元素有哪些？CSS的盒模型？
+ 	块级元素：div p h1 h2 h3 h4 form ul
+  行内元素:  a b br i span input select
+ 	Css盒模型:内容，border ,margin，padding
+
+2.CSS引入的方式有哪些? link和@import的区别是?
+  内联 内嵌 外链 导入   
+  区别 ：link	XHTML标签；在页面载入时同时加载；无兼容问题，支持JavaScript改变样式
+  @import css中定义的，只能加载css；网页完全加载完成后开始加载；css2.1以下浏览器不支持，不支持JavaScript改变样式
+
+3.CSS选择器有哪些？优先级算法如何计算？内联和important哪个优先级高？
+ 	标签选择器  类选择器 id选择器 后代选择器 父子选择器 通配符选择器 伪类选择器 群组选择器 
+ 	 id>class>标签选择器
+ 	important后者优先级高
+
+4.前端页面有哪几层构成，分别是什么？作用是什么？
+  结构层 Html   表示层（表现层）CSS   行为层 js
+  网页的结构层由 HTML 或 XHTML 之类的标记语言负责创建。标签，也就是那些出现在尖括号里的单词，对网页内容的语义含义做出了描述，但这些标签不包含任何关于如何显示有关内容的信息。例如，P 标签表达了这样一种语义：“这是一个文本段。”
+  网页的表示层由 CSS 负责创建。CSS 对“如何显示有关内容”的问题做出了回答。
+  网页的行为层负责回答“内容应该如何对事件做出反应”这一问题。这是 Javascript 语言和 DOM 主宰的领域。
+
+5.解释css sprites，如何使用。
+  Css 精灵 把一堆小的图片整合到一张大的图片上，减轻服务器对图片的请求数量
+  好处：
+          1.减少网页的http请求，从而大大的提高页面的性能
+          2.图片命名上的困扰
+          3.更换风格方便
+  缺点：
+         必须要限定容器大小符合背景图元素位置 ，需要计算
+         维护的时候比较麻烦
+  步骤：
+    制作一张具有多个状态的拼合图片，处理拼合图片时，需要按照一定的规律处理
+    给要显示背景的盒一个固定的尺寸（width、height），以背景方式加载让其局部显示（background：url（） no-repeat left top;）
+    通过背景图定位（background-position）控制不同的显示状态
+
+6.<img>标签上title与alt属性的区别是什么？
+  1、含义不同
+		alt是当图片不存在(不显示)时的替代文字; title鼠标悬停在图片上的时候，为图片添加提示信息
+
+	2、在浏览器中的表现不同
+		在firefox和ie8中，当鼠标经过图片时title值会显示，而alt的值不会显示; 只有在ie6中，当鼠标经过图片时title和alt的值都会显示。
+  对于网站seo优化来说，title与alt还有最重要的一点：搜索引擎对图片意思的判断，主要靠alt属性。所以在图片alt属性中以简要文字说明，同时包含关键词，也是页面优化的一部分。条件允许的话，可以在title属性里，进一步对图片说明。
+
+7.描述css reset的作用和用途
+  reset重置浏览器的css默认属性，浏览器的内核不同，解析的样式属性值不同，需要对所有使用的元素去掉它们的自带样式，然后重置，让不同内核的浏览器都能解析到相同的属性值
+8.浏览器标准模式和怪异模式之间的区别是什么？(浏览器标准模式和怪异模式之间的区别是什么?)
+ 	盒子模型 渲染模式的不同
+ 	使用 window.top.document.compatMode 可显示为什么模式
+  文档声明缺失ie6，ie7，ie8下会触发怪异模式
+  .box{ width:200px;height:200px;padding:20px; }
+9.css的基本语句构成是？
+  选择器{ 属性1:属性值1; 属性2:属性值2; …… }
+10.清除浮动的几种方式，各自的优缺点
+  1.给浮动元素的父元素固定高度 (不够灵活)   闭合浮动         
+  2.在浮动元素的最后加一个空div(块元素)，样式中不浮动但是增加一个clear:both;（代码冗余）        
+  3.给父元素加overflow:hidden; （隐患：对溢出内容发生隐藏 ）(ie6下问题:配合_zoom:1;)                
+  4.推荐方法：
+    给浮动元素的父元素添加.clearfix，(不会在结构上产生冗余代码，可多次重复使用)
+    .clearfix{ *zoom: 1; } /*处理ie6,7兼容*/
+    .clearfix:after{ content: "";  clear: both;  display: block; }
+11.xhtml和html有什么区别
+  HTML是一种基本的WEB网页设计语言，XHTML是一个基于XML（可扩展标记语言）的标记语言
+  最主要的不同：
+    XHTML 元素必须被正确地嵌套
+    XHTML 元素必须被关闭
+ 	  标签名必须用小写字母
+    XHTML 文档必须拥有根元素
+    XHTML可以在所有浏览器中工作，并且向后兼容
+  Doctype? 严格模式与混杂模式-如何触发这两种模式，区分它们有何意义?
+    用于声明文档使用那种规范（html/Xhtml）一般为 严格 过度 基于框架的html文档
+ 	  加入XMl声明可触发，解析方式更改为IE5.5 拥有IE5.5的bug
+12.什么是HTML
+	超文本标记语言，即HTML（Hypertext Markup Language），是用于描述网页文档的一种标记语言。
+
+语法简单，结构清晰
+脚本语言：（解释性语言），不需要编译，以文本形式存在，更接近编程语言，不具有编程语言复杂、严谨的语法和规则。如：JavaScript、ASP、PHP、Perl
+编程语言：通常用于向机器发出一系列复杂的指令。如：c语言
+
+13.列举html中的行元素和块元素（不用写的很全，除非面试官真的很苛刻）
+	块：address  center div form h1-h6 input frames ol p table ul li  iframe p section aside article header footer nav 
+	行：a  b em i img input  label span strong sub sup textarea br
+
+14.get和post的区别：
+  get方式：将数据作为URL的一部分发送给服务器。请求数据可以被缓存，能够保留在浏览器历史记录中，能作为书签被收藏，安全性比较低，有长度限制（不超过8192个字符）
+  post方式：将数据隐藏在HTTP数据流中进行传输。请求数据不会被缓存，也不会在浏览器的历史记录中保存，更不会作为书签被收藏，请求数据不会出现在地址栏，安全性比get方式要高，对数据长度没有限制
+15.目前常用的WEB标准静态页面语言是__ ______。Html
+16.改变元素的外边距用________，改变元素的内填充用________。margin  padding
+17.在Table中，tr是________，td是________。行列
+18.对WEB标准以及W3C的理解与认识
+  Web标准：可以分为结构、表现和行为。
+  结构主要由HTML标签组成
+  表现即css样式表，通过css样式可以使页面的结构标签更具美感
+  行为是指页面和用户具有的交互，同时使页面结构或表现发生变化，主要由js组成
+  web标准一般是将该三部分独立分开，使其更具有模块化
+  W3C(万维网联盟，World Wide Web Consortium）:解决 Web 应用中不同平台、技术和开发者带来的不兼容问题，保障 Web 信息的顺利和完整流通。主要工作是对web进行标准化，创建并维护 WWW 标准 
+  W3C对web标准提出了在编程中的一些代码规范，如：
+ 		标签闭合、标签小写、不乱嵌套、使用外链的css样式和js脚本
+    实现结构、表现、行为相分离
+    文件下载与页面访问速度更快
+    内容能被更多的用户所访问、被更广泛的设备所访问、更少的代码和组件，
+    容易维护、改版方便，
+    提高网站易用性
+
+19.当float和margin同时使用时，IE6的双倍边距BUG如何解决？
+  display：inline；
+                                    
+20.你做的页面在哪些流览器测试过？这些浏览器的内核分别是什么?
+      Gecko内核　  css前缀为"-moz-"　　 Mozilla Firefox火狐浏览器
+      WebKit内核　 css前缀为"-webkit-"   chrome、safari
+      Presto内核 　 css前缀为"-o-"        Opera(欧朋)
+      Trident内核　  css前缀为"-ms-"      IE
+21.什么是语义化的HTML?
+  根据页面内容的结构，选择合适的标签，便于浏览器、搜索引擎解析。如：标题用h1~h6，段落用p标签等
+  语义化的好处：
+    结构清晰
+    提高代码的可读性，便于团队开发和维护
+    有利于用户体验
+    有利于SEO 搜索引擎优化
+    在没有样式CCS情况下也以一种文档格式显示，并且是容易阅读的。搜索引擎的爬虫依赖于标记来确定上下文和各个关键字的权重，利于 SEO。
+    使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。
+
+22.写出几种IE6 BUG的解决方法
+   1.  双边距BUG float引起的  使用display:inline;
+ 	  2.  3像素问题 使用float引起的 使用dislpay:inline -3px  
+ 	  3.  超链接hover 点击后失效  使用正确的书写顺序 link visited hover active
+ 	  4.  Ie z-index问题 给父级添加position:relative
+ 	  5.  png 透明 使用js代码 改
+    6.  Min-height 最小高度 ！Important 解决’
+    7.  select 在ie6下遮盖 使用iframe嵌套
+
+23.请根据下面的HTML和CSS代码，画出布局示意图：
+
+<div id="page">
+    <div class="main"><div class="sub"></div></div>
+    <div class="nav"></div>
+</div>
+<style type="text/css">
+    #page { width: 520px; }
+    .nav  { width: 200px; float: right; }
+    .main { width: 200px; float: left; padding-left: 110px; }
+    .sub  { width: 100px; float: left; margin: 10px 0 10px -100px; }
+    .main { border: 1px solid #000; }
+    .nav, .sub { border: 1px dashed #000; height: 300px; }
+    .sub { height: 280px; }
+</style>
+
+  宽度值不必精确到像素，示意即可。
+
+25.display:none  和  visibility:hidden  的区别是什么
+
+
+26.css代码优化
+	margin-top:20px;
+	margin-right:5px;
+	margin-left:5px;
+	margin-bottom:20px;
+	font-style:italic;
+	font-weight:bold;
+	font-size:1em;
+	line-height:140%;
+	font-family:”Lucida Grande”,sans-serif;
+	color:#336699;
+
+	答案:
+	  margin:20px 5px;
+	  font:italic bold  1em/140%  “Lucida Grande”,sans-serif;
+	  color:#369;
+  为什么要进行优化?
+    答：减少页面请求和css解析次数，提高页面响应速度
+    
+27.div和span的区别
+  div:独立成行、宽度100%、高度自适应、可以直接设置宽、高
+	span: 宽、高自适应，默认水平显示。
+
+28.为什么没有办法定义1px左右的宽度容器
+  IE6默认的行高造成的，使用over:hidden,zoom:0.08 line-height:1px
+
+29.清除图片下方出现几像素的空白间隙
+  父元素加
+  图片转块display:block;
+  图片加overflow:hidden;
+30.写出一个文本输入框，属性为只读，最大输入字符为20个
+  
+  
+31.3像素bug
+  3 像素 bug 是 IE6 的一个著名的 bug，当浮动元素与非浮动元素相邻时，3 像素的 Bug 就会出现。
+  看下面这个左列浮动，右列不浮动的例子，css 代码如下：
+    body { margin:0;}
+    #side { float: left; background:#fb9447; height: 180px; width: 100px;}
+    #main { background: #fcd397; height: 180px; width:100px; }
+  如下图所示：
+
+  side 元素设置了浮动，main 没有设置，中间会有 3px 的间距。要解决这个问题，可以在#side 上加上
+_margin-right:-3px;记住，前边加上一下划线，这样这个样式专门针对 IE6 生效。但它不能通过 W3C 验证。
+所以最好的解决方法是把#main 也设置浮动，这样就可以避免 IE6 的 3 像素 bug 了。
+
