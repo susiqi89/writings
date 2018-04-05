@@ -4,7 +4,14 @@
  	Css盒模型:内容，border ,margin，padding
 	
 1.2行级元素和块级元素各有什么特征？
-		
+	内嵌（行级）元素的特征：
+        不会独占一行，宽度随元素的内容而变化（宽度自适应），相邻的行内元素会排列在同一行里，直到一行排不下，才会换行（水平显示）；
+        具有部分盒模型特征（css定义宽高时无效，有横向间距margin-right、margin-left和留白padding-left、padding-right，没有纵向margin-top、margin-bottom和留白padding- top、padding-bottom，边框保留）；
+        换行会被解析成空格
+
+	块级元素：
+	块级元素会独占一行，块级元素的宽度默认填撑满其父元素宽度（宽度100%，垂直布局）；
+        具有盒模型特征（默认可以设置宽度、高度、间距、留白、边框）
 
 2.CSS引入的方式有哪些? link和@import的区别是?
   内联 内嵌 外链 导入   
