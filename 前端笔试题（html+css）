@@ -1,7 +1,10 @@
  1.行内元素有哪些？块级元素有哪些？CSS的盒模型？
  	块级元素：div p h1 h2 h3 h4 form ul
-  行内元素:  a b br i span input select
+  	行内元素:  a b br i span input select
  	Css盒模型:内容，border ,margin，padding
+	
+1.2行级元素和块级元素各有什么特征？
+		
 
 2.CSS引入的方式有哪些? link和@import的区别是?
   内联 内嵌 外链 导入   
@@ -147,6 +150,11 @@
   宽度值不必精确到像素，示意即可。
 
 25.display:none  和  visibility:hidden  的区别是什么
+   display:none; 隐藏对象。 display:block; 显示对象
+	不为被隐藏的对象保留其物理空间 
+   visibility:
+	visible： 设置对象可视    
+	hidden： 设置对象隐藏 ，与display属性不同，只是隐藏了内容而已，其占位空间仍然保留。
 
 
 26.css代码优化
@@ -180,7 +188,7 @@
   图片转块display:block;
   图片加overflow:hidden;
 30.写出一个文本输入框，属性为只读，最大输入字符为20个
-  
+  <input type="text" readonly maxlength="20" />
   
 31.3像素bug
   3 像素 bug 是 IE6 的一个著名的 bug，当浮动元素与非浮动元素相邻时，3 像素的 Bug 就会出现。
@@ -215,3 +223,8 @@ _margin-right:-3px;记住，前边加上一下划线，这样这个样式专门�
       
     对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用px即可 。
     对于需要适配各种移动设备，使用rem，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备。
+33. css的基本语句构成是什么？
+   	选择器{属性：属性值；属性：属性值；}
+34.合理的页面布局中常听过结构与表现分离，那么结构是__HTML__,表现是__css____.
+35.
+    
