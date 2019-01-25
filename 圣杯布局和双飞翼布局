@@ -1,3 +1,5 @@
+圣杯布局：
+    有头、有尾、包三列，圣杯布局中间是有container大容器包裹着左中右区域的
 <header><h2>Header内容区</h2></header>
 <div class="container">
     <div class="middle"><h4>中间弹性区</h4></div>
