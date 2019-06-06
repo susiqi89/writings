@@ -68,18 +68,112 @@ web前端SEO的内容：
     post方式：将数据隐藏在HTTP数据流中进行传输。请求数据不会被缓存，也不会在浏览器的历史记录中保存，更不会作为书签被收藏，请求数据不会出现在地址栏，安全性比get方式要高，对数据长度没有限制
 
 闭包：
-
+    函数嵌套函数；有权访问另外一个函数作用域中变量 的函数（可以使用函数之外定义的变量）
+    特点：函数嵌套函数、内部函数可以引用外部函数的参数或变量，参数和变量不会被垃圾回收机制收回
+    创建闭包的常见方式就是在一个函数内部创建另外一个函数
+    function foo(x) {
+    	var tmp = 3;
+    	return function (y) {
+        	alert(x + y + tmp++);
+    	}
+    };
+    var bar = foo(2); // bar 现在是一个闭包，x和tmp始终保存在内存中
+    bar(10);  //显示15
+    bar(10);  //显示16
 
 闭合浮动
 
 
 拖拽的实现
-
+    在元素中按下鼠标，选中要拖动的元素；移动鼠标，元素跟随鼠标移动位置；松开鼠标，元素位置确定。
 
 数组去重（小程序实现）
-
+    将第i个元素与当前元素之后的每一个元素进行比较，如果一致则删除
+    var arr = [1,2,3,4,1,2,3];
+    for(var i=0; i<arr.length; i++){
+        for(var j=i+1; j<arr.length; j++{
+            if(arr[i] == arr[j]){
+                arr.splice(j,1);//删除元素
+                j--;
+            }
+        }
+    }
+    function quchong(arr){
+        var newArr = [];
+        var obj = {};
+        arr.forEach(function(item){
+            //if(!obj[item]){//key为字符串o[1],o["1"]
+            if(!obj[(typeof item) + item]){//key为字符串o[1],o["1"]    
+                newArr.push(item);
+                obj[(typeof item) + item] = 1;
+            }
+        })
+        return newArr;
+    }
 
 去掉前后端空格（小程序实现）
+    if( !String.prototype.trim){  //重写trim方法，使用自带接口trim()，考虑兼容性
+        String.prototype.trim = function(){
+            return this.replace(/^\s+/, “”).replace(/\s+$/, ””);  //利用正则匹配去除字符串前后空格
+        }
+    }
+    
+    function fntrim(str){  //写fntrim去掉左右空格
+        return str.replace(/^\s+/,””).replace(/\s+$/,””);
+    }
+
+
+小贤是一条可爱的小狗(Dog)，它的叫声很好听(wow)，每次看到主人的时候就会乖乖叫一声(yelp)。从这段描述可以得到以下对象：
+  function Dog () {
+    this.wow = function () {  console.log('wow')  }
+    this.yelp = function () {  this.wow(); }
+  }
+小芒和小贤一样，原来也是一条可爱的小狗，可是突然有一天疯了(MadDog)，一看到人就会每隔半秒叫一声(wow)地不停叫唤(yelp)。请根据描述，按示例的形式用代码来实。（继承，原型，setInterval,难在闭包的应用）
+    //    方法一：
+    function Dog(){
+        this.wow = function(){ alert("wow"); };
+        this.yelp = function(){ this.wow(); }
+    }
+    var dog = new Dog();
+    dog.yelp();
+    function MadDog(){
+        this.wow = function(){ alert("wow");};
+        this.yelp = function(){
+            var _this = this;
+            setInterval(function(){  _this.wow(); },500);
+        }
+    }
+    var madDog = new MadDog();
+    madDog.yelp();
+    方法二：
+    function Dog(){
+        this.wow = function(){ alert("wow"); };
+        this.yelp = function(){ this.wow(); }
+    }
+    function MadDog(){//构造函数
+        this.yelp = function(){//闭包的应用
+            var _this = this;
+            setInterval(function(){ //定时器的使用及定时器中this的指向
+                _this.wow();
+            },500);
+        }
+    }
+    MadDog.prototype = new Dog();//原型继承
+    var madDog = new MadDog();
+    madDog.yelp();
+    方法三：
+    function Dog(){
+        this.wow = function(){ alert("wow"); };
+        this.yelp = function(){ this.wow(); }
+    }
+    function MadDog(){ Dog.apply(this,arguments); }
+    MadDog.prototype = new Dog();
+    MadDog.prototype.say = function(){
+        var _this = this;
+        setInterval(function(){  _this.wow(); },500)
+    };
+    var madDog = new MadDog();
+    madDog.say();
 
 
 使用过的前端框架及其优缺点
