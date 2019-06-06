@@ -24,12 +24,15 @@
     先辈选择器A 后辈选择器B{[样式]}
     在选择器A区域内的所有选择器B全部生效
     
-    选择器的权重（权重有覆盖性）：	
+    选择器的权重（权重有覆盖性）：id选择器权值为100，class选择器权值为10，标签选择器权值为1	
     
   7、父子选择器
     父选择器>子选择器
     body>div
-  8、伪类选择器
+  8、交集选择器(由两个以上的单一选择器组成)
+      选择div标签中带类名为box元素 ：
+      div.box { background-color:red; }
+  9、伪类选择器
     a:link{链接的默认样式}
     a:visited{链接访问过后样式}
     a:hover{鼠标悬停到链接上的样式}
@@ -37,7 +40,7 @@
     a{color:red;}四个伪类状态都生效
     L-V-H-A
 
-  父亲盒内的第n个元素（只能用于一组相同的标记）
+  10、父亲盒内的第n个元素（只能用于一组相同的标记）
     选择器:first-child{}  一组元素中的第1个子元素（父级元素中子集元素的第一个）
     选择器:last-child{}   一组元素中的最后1个子元素
     选择器:nth-child(n){}   一组元素中的第n个子元素
@@ -46,14 +49,14 @@
     选择器:nth-last-of-type(2){}   从最后一个开始数第2个
     选择器:first-line{}    一段文本中的第1行
     选择器:first-letter{}    一段文本中的第1个字（字母）
-  9、伪元素选择器
+  11、伪元素选择器
     1）选择器名:before 在选择器内部，内容之前插入新的内容
       选择器名:before{content:’增加的内容’}
     2）选择器名:after 在选择器内部，在内容之后插入新的内容
       选择器名:after{content:’增加的内容’}
-  10、div+p    紧接在div元素之后的所有p元素
-  11、input:focus    获取input的焦点，类似于input的点击事件
+  12、div+p    紧接在div元素之后的所有p元素
+  13、input:focus    获取input的焦点，类似于input的点击事件
 	  eg.  input:focus{width:150px;}
-  12、Attribute Selector
+  14、属性选择器Attribute Selector
 	  eg.  <div data-modal=”open”></div>
 		  [data-modal=”open”]{}
