@@ -1,0 +1,102 @@
+在HTML中标签是构成网页的基本单位。标签通常有两种呈现状态，<标签名> [内容] </标签名>的双标签和<标签名/>的单标签。接下来为大家介绍一些常用标签及相关属性
+1.html标签，网页的整体文件。网页使用的是html语言，所有的网页代码都包含在html之间。
+2.head标签，网页的头部信息，是网页中的附属信息，其内容不会显示在网页中。
+3.meta标签，网页的元信息，用来声明编码标准、keywords、description、viewport。
+4.title标签，网页的标题。
+5.body标签，网页的主体，所有在浏览器窗口中显示的内容，都在这对双标签内部。
+6.div标签，用来搭建网页结构的基本标签。
+7.img标签，网页中的图片标签，用来在网页中添加图片。语法：
+  <img src="图片的路径" title="图片标题" alt="图片占位符" />
+8.h系列标签，用于网页标题。h1~h6大小依次减小，重要程度也依次减弱；h1在同一个网页中只使用一次，其他标签可以重复使用。
+9.p标签，段落标签，用于排版大篇文字 
+10.br标签，强制换行标签。
+11.hr标签，水平分割线标签。
+12.列表标签，分为ul无序列表、ol有序列表、dl自定义列表
+  <ul>
+      <li>列表项</li>
+  </ul>
+  <ol start="1" type="1" reversed=" reversed ">
+      <li>列表项</li>
+  </ol>
+    start属性，定义开始值
+    type属性，列表项的符号
+    reversed=" reversed" 倒序
+  <dl>
+      <dt>列表标题</dt>
+      <dd>列表项</dd>
+  </dl>
+13.a标签，超链接标签，语法：
+  <a href="链接网址/文件" title="标题" target="_blank|_self"></a>
+    target="_self" 在当前窗口中打开链接网页
+    target="_blank" 在新的窗口中打开链接网页
+14.span标签，用于一段文字中局部文字实现特殊效果，多个span横向布局。
+15.strong标签，有强调语气，被包裹的文字呈现粗体效果
+16.b标签，被包裹的文字呈现粗体效果
+17.em标签，有强调语气，被包裹的文字呈现斜体效果
+18.i标签，被包裹的文字呈现斜体效果
+19.sub标签，下标
+20.sup标签，上标
+21.del标签，删除线标签
+22.form标签，表单标签，表单数据的容器，所有的其他表单控件都要放到form中间，才能传到后台数据库。语法：
+  <form action="接受表单内容的地址" method="表单提交方式" name="表单名称">
+    method="get"提交时，会将表单内容附加在URL地址的后面，所以限制了提交的内容长度，不超过8192个字符，且不具备保密性。
+    method="post"提交时，将表单中的数据一并包含在表单主体中，一起传送到服务器中处理，没有数据大小限制，具有保密性。
+23.input输入表单元素
+  1)<input type="text" value="值" placeholder="占位名称" />单行文本框
+  2)<input type="password" value="值" placeholder="占位名称"/>密码框
+  3)<input type="hidden" value="隐藏的内容">隐藏表单域
+  4)<input type="radio" value="值"/>单选框
+  5)<input type="checkbox" value="值" />复选框
+  6)<input type="button" value="按钮提示文本" />普通按钮
+  7)<input type="submit" value="按钮提示文本" />提交按钮
+  8)<input type="reset" value="按钮提示文本" />重置按钮，重置表单数据为默认值
+24.select标签，下拉列表标签。语法： 
+  <select name="" >
+      <option>选项1</option>
+  </select>
+25.textarea标签，多行文本域。一般用于留言板等需要输入大量文本的位置。语法：
+  <textarea>提示信息</textarea>
+  <textarea cols="35" rows="10"></textarea>
+    cols="35" 宽度
+    rows="10" 行数
+26.label 标签，表单标注。
+27.iframe标签，内联框架。语法：
+  <iframe src="默认链接网页" name="框架名"></iframe>
+28.pre标签，预定义文本，被包含在pre中的元素通常会原样输出，保留空格和换行。
+  <pre>文本内容</pre>
+  29.特殊符号：
+  ©版权符号：&copy;
+  空格：&nbsp;
+  <：&lt;
+  >：&gt;
+  ¥：&yen;
+  ®：&reg;
+30.frameset标签，框架但是h5中不支持frame框架，不需要body直接写在head之后。语法：
+  <html>
+      <head></head>
+      <frameset cols="*,*">
+          <frame />
+          <frame />
+      </frameset>
+  </html>
+31.table标签，表格
+  1)caption标题
+    <caption>表格标题</caption>
+  2)tr 行
+  3)th表头
+  4)td单元格。语法：
+    <table >
+      <caption>表格标题</caption>
+        <tr>
+          <th>班级</th>
+          <th>姓名</th>
+          <th>年龄</th>
+        </tr>
+        <tr>
+          <td>1602</td>
+          <td>姚同学</td>
+          <td>18</td>
+        </tr>
+    </table>
+      cellspacing属性，单元格之间的间距，默认是2px
+      cellpadding属性，单元格内容与单元格边框的显示距离，单位像素
