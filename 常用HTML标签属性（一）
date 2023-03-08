@@ -50,6 +50,7 @@
   6)<input type="button" value="按钮提示文本" />普通按钮
   7)<input type="submit" value="按钮提示文本" />提交按钮
   8)<input type="reset" value="按钮提示文本" />重置按钮，重置表单数据为默认值
+  9)<button>按钮文字</button> 按钮标签，默认为submit，可以通过type属性修改按钮类型，不设置value属性
 24.select标签，下拉列表标签。语法： 
   <select name="" >
       <option>选项1</option>
