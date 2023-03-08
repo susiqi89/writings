@@ -9,7 +9,7 @@
   3、class选择器（类选择器，用于二级或者二级以上拆分，有相同样式时，可重复使用）
     <标签名 class=”class名”></标签名>   结构中
     .class名{[样式]}    样式中
-  4、群组选择器（把相同的样式统一定义）
+  4、群组选择器（把相同的样式统一定义）并集选择器
     选择器1,选择器2,选择器3,……,选择器n{[样式]}
     建议一级盒使用id选择器，二级及二级以上的盒使用class选择器；id选择器具有唯一性，class选择器重复使用
     命名规则：
@@ -54,9 +54,14 @@
       选择器名:before{content:’增加的内容’}
     2）选择器名:after 在选择器内部，在内容之后插入新的内容
       选择器名:after{content:’增加的内容’}
+      *****伪元素选择器中一个冒号和两个冒号的区别在于：一个冒号兼容IE低版本，两个冒号不兼容，最新的CSS3标准推荐使用两个冒号实现伪元素选择器。
   12、div+p    紧接在div元素之后的所有p元素
   13、input:focus    获取input的焦点，类似于input的点击事件
 	  eg.  input:focus{width:150px;}
   14、属性选择器Attribute Selector
 	  eg.  <div data-modal=”open”></div>
-		  [data-modal=”open”]{}
+	  	  [data-modal]{}  具有data-modal属性名的元素
+		  [data-modal=”open”]{}  具有data-modal属性名，且属性值为open的元素
+		  [data-modal*='open']{}  具有data-modal属性名，且属性值中包含open的元素
+		  [data-modal^='open']{}  具有data-modal属性名，且属性值以open开头的元素
+		  [data-modal$='open']{}  具有data-modal属性名，且属性值以open结尾的元素
