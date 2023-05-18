@@ -1,0 +1,43 @@
+canvas绘图
+一 绘制矩形
+      1. 创建画布：指定id、width(画布宽度)、height(画布高度)
+          <canvas id="canvas" width="500" height="350"></canvas>
+          创建一个画布，长度为500，高度为350
+      2. 引入脚本：<script type="text/javascript" src="js/canvas.js" charset="utf-8"></script>
+          引入一个名为canvas.js的js脚本，语言编码为utf-8
+      3. body的属性中，使用onLoad="draw('canvas')"调用脚本文件中的draw函数进行图形的绘制
+      4. 获取canvas元素
+         用getElementById获取canvas对象
+      5. 获取上下文
+         在绘制图形时要用图形上下文（一个封转了很多绘图功能的对象），使用canvas对象的getContext()方法获得图形上下文，在draw函数中把参数设置为“2d”
+      6. 填充与绘制过程
+         绘制的两种方法：填充（fill将图形内部填满）、绘制边框（stroke不把图形内部填满，只是绘制图形的外框）
+      7. 设置绘制样式
+         调用相关方法进行绘制：fillStyle（填充的样式，在本属性中设置填入的填充颜色值）、strokeStyle（图形边框的样式，在本属性中设置填入边框的填充颜色）
+     8. 指定画笔的宽度
+         通过上下问对象（context）的lineWidth属性来设置图形边框的宽度
+     9. 设置颜色值
+         16进制的颜色值、颜色名、rgb(rgba(0,0,0))、rgba(rgba(0,0,0,0.1))
+     10. 绘制矩形
+         context.filRect(x,y,width,height)填充方法
+         context.strokeRect(x,y,width,height)
+         x指矩形的起点坐标，y矩形的终点坐标，坐标原点时canvas画布的左上角，width为矩形的长度，height为矩形的高度
+二 绘制圆形
+      1. 开始创建路径
+         使用图形上下文对象的beginPath方法：context.beginPath();
+      2. 创建图形路径
+         创建图形路径时，查看使用图形上下对象的arc方法
+         context.arc(x,y,radius,starAngle,endAngle,anticlockwise)
+         x绘制图形的起点坐标，y终点坐标，radius圆形半径，starAngle开始的角度，endAngle结束的角度，anticlockwise是否按顺时针方向绘制（布尔值true）
+         var radius=degrees*Math.PI/180  Math.PI表示的角度时180度，Math.PI*2的角度是360度
+      3. 创建完成关闭路径
+三 绘制文字
+      使用text方法或strokeText方法
+      1. Text方法用填充的方法绘制字符串
+         context.fillText(text,x,y,[maxwidth])
+      2. strokeText方法用轮廓的方法绘制字符串
+         context.strokeText(text, x,y,[maxwidth])
+         text表示要检测的文字，x表示要绘制文字的起点横坐标，y表示要绘制的文字起点纵坐标，maxwidth为可选参数，表示显示文字的时候最大的宽度，可以防止文字溢出
+         context.font = “font-weight font-size font-family”;
+         context.textBaseline = ‘alphabetic’;(top顶部对齐，hanging悬挂，middle中间对齐，bottom底部对齐，alphabetic默认值)
+         context.textAlign = ‘start’
